@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import CreateNote from "./components/CreateNote";
 import Notes from "./components/Notes";
-import Login from './components/Login'
+import Login from './components/Login';
+import Register from './components/Register';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import Preferences from './components/Preferences.jsx';
@@ -24,6 +25,7 @@ function App() {
       
       <Route path="/create" element={<CreateNote />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/preferences" element={<Preferences />} />
       <Route path="/dashboard" element={<Dashboard />} />
     </Routes>

@@ -7,6 +7,8 @@ function Navbar(){
         <h4 style={{marginRight:'10px'}}><Link to='/notes'>Notes</Link></h4>
         <h4 style={{marginRight:'10px'}}><Link to='/create'>Create Notes</Link></h4>
         <h4 style={{marginRight:'10px'}}><Link to='/login'>Login</Link></h4>
+        <h4 style={{marginRight:'10px'}}><Link to='/register'>Register</Link></h4>
+
     </nav>
 
     )}

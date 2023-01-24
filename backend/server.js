@@ -15,11 +15,7 @@ require('dotenv').config()
  //require route
  app.use("/", require("./route"));
 
-app.use('/login', (req, res) => {
-    res.send({  
-      token: 'test123'  
-    });
-});
+
  app.listen(3001, function(){
      console.log("express server is running on port 3001")
  })

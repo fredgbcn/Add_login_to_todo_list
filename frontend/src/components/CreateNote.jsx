@@ -28,7 +28,7 @@ import './CreateNote.css';
             axios.post('http://localhost:3001/create', newNote);
         }
         return (<div>
-            <h1>Create Note</h1>.
+            <h1>Create Note</h1>
             <form>
                 <input onChange={handleChange} name="title" autoComplete="off" placeholder="note title" value={input.title}></input>
                 <textarea onChange={handleChange} name="content" autoComplete="off" placeholder="note content" value={input.content}></textarea>
