@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 
     const Notes = () => {
-        const[notes, setNotes] = useState([{  //constante notes, fonstion setNotes
+        const[notes, setNotes] = useState([{  //constante notes, fonction setNotes
             title:'',
             content:''
         }]) 

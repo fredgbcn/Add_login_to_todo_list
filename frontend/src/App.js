@@ -9,7 +9,7 @@ import Register from './components/Register';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import Preferences from './components/Preferences.jsx';
-
+import AddContent from "./components/AddContent";
 function App() {
   return (
 
@@ -22,7 +22,7 @@ function App() {
     
       <Route path="/notes" element={<Notes />} />
 
-      
+      <Route path="/addcontent" element={<AddContent />} />
       <Route path="/create" element={<CreateNote />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
