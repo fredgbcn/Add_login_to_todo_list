@@ -10,26 +10,29 @@ import './App.css';
 import Dashboard from './components/Dashboard';
 import Preferences from './components/Preferences.jsx';
 import AddContent from "./components/AddContent";
+import { UserContextProvider } from "./UserContext";
+
 function App() {
   return (
+    <UserContextProvider>
+      <Router>
 
-   <Router>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<Home />} />
+        
+          <Route path="/notes" element={<Notes />} />
 
-    
-      <Route path="/notes" element={<Notes />} />
-
-      <Route path="/addcontent" element={<AddContent />} />
-      <Route path="/create" element={<CreateNote />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/preferences" element={<Preferences />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-    </Routes>
-   </Router>
+          <Route path="/addcontent" element={<AddContent />} />
+          <Route path="/create" element={<CreateNote />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/preferences" element={<Preferences />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Router>
+   </UserContextProvider>
   );
 }
 

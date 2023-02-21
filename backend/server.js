@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+
 require('dotenv').config()
-const users = [];
+
+
 app.set('view-engine', 'ejs');
 app.use(express.urlencoded({extend: false}))  
  app.use(cors());

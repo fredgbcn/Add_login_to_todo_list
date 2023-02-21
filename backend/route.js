@@ -3,6 +3,8 @@ const router = express.Router();
 const Note = require("./models/noteModel");
 const User = require("./models/usersSchema");
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const jwtSecret = 'randomFraslklj0908908hhe';
 //ENVOYER NOTE A MONGO
 router.route("/create").post((req, res) =>{
    const title = req.body.title;
@@ -35,4 +37,28 @@ router.route("/notes").get((req, res) =>{
   .then(foundNotes=> res.json(foundNotes)) 
 })
 
+router.route('/login'). post(async (req, res) =>{
+  const {email, password, _id} = req.body;
+  
+  try{
+const userDoc =await User.findOne({email});
+if(userDoc){
+  const passOk = bcrypt.compareSync(password, userDoc.password);
+  if(passOk){
+    jwt.sign({email:userDoc.email, id:userDoc, _id}, jwtSecret, {}, (err, token)=>{
+      if (err) throw err;
+      res.cookie('token', token).json(userDoc);
+    });
+  }else{
+    res.status(422).json('not ok')
+  }
+} else {
+  res.status(404).json('not found');
+}
+  }
+  catch(err){
+    console.error(err);
+    res.status(500).json('server error');
+  }
+})
 module.exports = router;
