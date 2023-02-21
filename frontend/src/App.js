@@ -11,13 +11,14 @@ import Dashboard from './components/Dashboard';
 import Preferences from './components/Preferences.jsx';
 import AddContent from "./components/AddContent";
 import { UserContextProvider } from "./UserContext";
+import Header from "./components/Header";
 
 function App() {
   return (
     <UserContextProvider>
       <Router>
 
-        <Navbar/>
+        <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
 
