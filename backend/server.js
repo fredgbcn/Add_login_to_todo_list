@@ -13,7 +13,7 @@ app.use(express.urlencoded({extend: false}))
  mongoose.set("strictQuery", false);
  //connect to mongoose
  mongoose.connect(process.env.MONGO_CODE, {useNewUrlParser: true}).then(()=>{
-    console.log("connecté à Mongodb")
+    console.log("connect à Mongodb")
 });
  //require route
  app.use("/", require("./route"));
