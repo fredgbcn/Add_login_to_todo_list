@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+const cookieParser = require('cookie-parser');
 
 require('dotenv').config()
 
@@ -10,6 +11,7 @@ app.set('view-engine', 'ejs');
 app.use(express.urlencoded({extend: false}))  
  app.use(cors());
  app.use(express.json());
+ app.use(cookieParser());
  mongoose.set("strictQuery", false);
  //connect to mongoose
  mongoose.connect(process.env.MONGO_CODE, {useNewUrlParser: true}).then(()=>{
