@@ -28,6 +28,8 @@ function App() {
           <Route path="/addcontent" element={<AddContent />} />
           <Route path="/create" element={<CreateNote />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Login />} />
+
           <Route path="/register" element={<Register />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/dashboard" element={<Dashboard />} />

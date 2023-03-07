@@ -5,7 +5,6 @@ const User = require("./models/usersSchema");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const jwtSecret = 'randomFraslklj0908908hhe';
-const cookieParser = require('cookie-parser');
 //ENVOYER NOTE A MONGO
 router.route("/create").post((req, res) =>{
    const title = req.body.title;
@@ -77,7 +76,9 @@ router.route('/profile'). get(async (req, res) =>{
     res.json(null);
   }
 })
-
+router.route('/logout'). post((req, res) =>{
+  res.cookie('token', '').json(true);
+})
 
 
 module.exports = router;

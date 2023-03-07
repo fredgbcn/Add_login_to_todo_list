@@ -8,7 +8,7 @@ export const UserContext = createContext({});
 export function UserContextProvider({children}) {
     const [user, setUser] = useState(null);
     const [ready,setReady] = useState(false);
-    useEffect(() => {
+    useEffect(() => { //Pour garder la session en marche malgrés le refresh
       if (!user) {
         axios.get('/profile').then(({data}) => {
           setUser(data);
